@@ -24,7 +24,7 @@ Vagrant.configure("2") do |config|
   tz = ENV['TZ']
   pma_port = ENV['PMA_PORT']
 
-  config.vm.box = "ubuntu/jammy64"
+  config.vm.box = "net9/ubuntu-24.04-arm64"
   config.vm.hostname = "org-mysql"
   config.vm.network "forwarded_port", guest: db_port, host: db_port
   config.vm.network "forwarded_port", guest: pma_port, host: pma_port
@@ -48,8 +48,8 @@ Vagrant.configure("2") do |config|
       sudo apt-get install -y mysql-client
       sudo groupadd docker || true
       sudo usermod -aG docker vagrant
-      git clone https://github.com/sebastianaf/training-mysql-single
-      cd training-mysql-single || true
+      git clone https://github.com/sebastianaf/training-mysql-armv8-single
+      cd training-mysql-armv8-single || true
 
       echo "DB_USER=#{db_user}" > .env
       echo "DB_PASSWORD=#{db_password}" >> .env

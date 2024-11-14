@@ -1,4 +1,4 @@
-# training-mysql-single
+# training-mysql-armv8-single
  MySQL single sever and PhpMyAdmin with Docker Compose and Vagrant deploy
 
 ## Requirements
@@ -7,7 +7,7 @@
 ## Steps
 ### 1. Clone the repository
 ```shell
-git clone https://github.com/sebastianaf/training-mysql-single
+git clone https://github.com/sebastianaf/training-mysql-armv8-single
 cd training-mysql-single
 ```
 ### 2. Set environment variables
@@ -18,6 +18,6 @@ It's recommend to change all the names (in `docker-compose.yml`) named with `org
 
 ### 4. Run
 ```shell
-docker compose -p training-posgresql up -d
+docker compose -p training-mysql-armv8-single up -d
 ```
 After type and run the command go to `localhost:${PMA_PORT}`

@@ -2,7 +2,7 @@ services:
   org-mysql-db-01:
     container_name: org-mysql-db-01
     restart: always
-    image: mysql:latest
+    image: arm64v8/mysql:latest
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
       MYSQL_DATABASE: ${DB_NAME}
@@ -19,7 +19,7 @@ services:
   org-mysql-phpmyadmin:
     container_name: org-mysql-phpmyadmin
     restart: always
-    image: phpmyadmin/phpmyadmin:latest
+    image: arm64v8/phpmyadmin:latest
     environment:
       PMA_HOST: org-mysql-db-01
       PMA_USER: ${DB_USER}
