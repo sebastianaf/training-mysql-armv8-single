@@ -22,7 +22,7 @@ services:
     image: arm64v8/phpmyadmin:latest
     environment:
       PMA_HOSTS: org-mysql-db-01
-      PMA_UPLOAD_LIMIT: 5G
+      UPLOAD_LIMIT: 5G
     depends_on:
       - org-mysql-db-01
     ports:
