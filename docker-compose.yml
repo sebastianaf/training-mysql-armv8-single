@@ -2,7 +2,9 @@ services:
   org-mysql-db-01:
     container_name: org-mysql-db-01
     restart: always
-    image: arm64v8/mysql:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
       MYSQL_DATABASE: ${DB_NAME}
